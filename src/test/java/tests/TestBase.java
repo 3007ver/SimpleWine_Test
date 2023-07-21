@@ -21,10 +21,11 @@ public class TestBase {
 
     @BeforeAll
     static void BeforeAll () {
+
+        Configuration.remote = System.getProperty("remoteBrowser", selenoidConfig.selenoidUrl());
         ChromeOptions ops = new ChromeOptions();
         ops.addArguments("--disable-notifications");
         Configuration.browserCapabilities = ops;
-        Configuration.remote = System.getProperty("remoteBrowser", selenoidConfig.selenoidUrl());
         Configuration.baseUrl = System.getProperty("baseUrl", "https://simplewine.ru/");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         String[] browser = System.getProperty("browser", "chrome:100.0").split(":");
