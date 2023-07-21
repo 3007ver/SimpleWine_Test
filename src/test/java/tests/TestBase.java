@@ -25,7 +25,7 @@ public class TestBase {
         Configuration.remote = System.getProperty("remoteBrowser", selenoidConfig.selenoidUrl());
         Configuration.baseUrl = System.getProperty("baseUrl", "https://simplewine.ru/");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        String[] browser = System.getProperty("browser", "chrome:115.0").split(":");
+        String[] browser = System.getProperty("browser", "chrome:100.0").split(":");
         Configuration.browser = browser[0];
         Configuration.browserVersion = browser[1];
         Configuration.pageLoadStrategy = "eager";
