@@ -23,9 +23,6 @@ public class TestBase {
     static void BeforeAll () {
 
         Configuration.remote = System.getProperty("remoteBrowser", selenoidConfig.selenoidUrl());
-        ChromeOptions ops = new ChromeOptions();
-        ops.addArguments("--disable-notifications");
-        Configuration.browserCapabilities = ops;
         Configuration.baseUrl = System.getProperty("baseUrl", "https://simplewine.ru/");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         String[] browser = System.getProperty("browser", "chrome:115.0").split(":");
@@ -33,6 +30,9 @@ public class TestBase {
         Configuration.browserVersion = browser[1];
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 20000;
+        ChromeOptions ops = new ChromeOptions();
+        ops.addArguments("--disable-notifications");
+        Configuration.browserCapabilities = ops;
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
