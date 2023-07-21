@@ -30,15 +30,18 @@ public class TestBase {
         Configuration.browserVersion = browser[1];
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 20000;
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        ChromeOptions chromeOptions = new ChromeOptions();
+
+        chromeOptions.addArguments("--disable-notifications");
+
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
                 "enableVideo", true
         ));
+        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         Configuration.browserCapabilities = capabilities;
-        ChromeOptions ops = new ChromeOptions();
-        ops.addArguments("--disable-notifications");
-        Configuration.browserCapabilities = ops;
     }
 
     @BeforeEach
