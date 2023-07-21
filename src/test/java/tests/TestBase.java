@@ -21,9 +21,7 @@ public class TestBase {
 
     @BeforeAll
     static void BeforeAll () {
-        ChromeOptions ops = new ChromeOptions();
-        ops.addArguments("--disable-notifications");
-        Configuration.browserCapabilities = ops;
+
         Configuration.remote = System.getProperty("remoteBrowser", selenoidConfig.selenoidUrl());
         Configuration.baseUrl = System.getProperty("baseUrl", "https://simplewine.ru/");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
@@ -38,6 +36,9 @@ public class TestBase {
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
+        ChromeOptions ops = new ChromeOptions();
+        ops.addArguments("--disable-notifications");
+        Configuration.browserCapabilities = ops;
     }
 
     @BeforeEach
