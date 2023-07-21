@@ -52,7 +52,8 @@ public class EmailLoginTests extends TestBase {
     @Test
     void logOutTest () {
         step("Открыть главную страницу", () -> {
-            mainPage.confirmAge()
+            mainPage.openPage()
+                    .confirmAge()
                     .confirmLocation();
         });
         step("Нажать кнопку Войти", () -> {
