@@ -20,7 +20,7 @@ public class LoginPage {
     passwordInput = $("[name=authPassword]"),
     submitButton = $(".registration__form-button"),
     profilePopup = $("[data-autotest-target=user-profile-popup]"),
-    userProfile = $(".user-menu__item"),
+    userProfile = $(".user-menu"),
     userNameInProfile = $(".lk-banner__greeting"),
     exitButton  = $("[data-autotest-target-id=user-profile-popup-exit]"),
     authPopup = $(".auth__wrapper");
@@ -54,7 +54,7 @@ public class LoginPage {
 
 
     public LoginPage goToUserProfile () {
-        userProfile.click();
+        userProfile.$(byText("Профиль")).click();
         return this;
     }
     public LoginPage openLkPage () {
@@ -71,7 +71,7 @@ public class LoginPage {
         return this;
     }
     public LoginPage logOutWithButton () {
-        userProfile.hover();
+        userProfile.$(byText("Профиль")).hover();
         profilePopup.shouldBe(Condition.visible);
         exitButton.click();
         return this;

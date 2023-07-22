@@ -44,8 +44,9 @@ public class EmailLoginTests extends TestBase {
         });
         step("Проверить, что произошел переход в личный кабинет  и отображается имя пользователя", () -> {
             loginPage.goToUserProfile()
-                    .checkUserName(nameValue)
-                    .checkLink();
+                    .checkLink()
+                    .checkUserName(nameValue);
+
 
         });
     }

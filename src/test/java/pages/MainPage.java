@@ -15,6 +15,7 @@ public class MainPage {
 
     public MainPage openPage() {
         open("/");
+        Selenide.sleep(5000);
         return this;
     }
 
