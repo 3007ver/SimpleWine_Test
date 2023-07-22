@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Selenide;
 import config.CredentialsConfig;
 import org.aeonbits.owner.ConfigFactory;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.LoginPage;
 import pages.MainPage;
@@ -21,6 +22,7 @@ public class EmailLoginTests extends TestBase {
     String nameValue = config.name();
 
     @Test
+    @Tag("remote")
     void loginWithEmailTest () {
         step("Открыть главную страницу", () -> {
             mainPage.openPage()
@@ -51,6 +53,7 @@ public class EmailLoginTests extends TestBase {
         });
     }
     @Test
+    @Tag("remote")
     void logOutTest () {
         step("Открыть главную страницу", () -> {
             mainPage.openPage()
@@ -84,6 +87,7 @@ public class EmailLoginTests extends TestBase {
     }
 
     @Test
+    @Tag("remote")
     void checkLogOutInOtherFrame () {
         step("Открыть главную страницу", () -> {
             mainPage.openPage()
