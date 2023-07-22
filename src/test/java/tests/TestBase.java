@@ -28,7 +28,6 @@ public class TestBase {
         String[] browser = System.getProperty("browser", "chrome:100.0").split(":");
         Configuration.browser = browser[0];
         Configuration.browserVersion = browser[1];
-        Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 20000;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();

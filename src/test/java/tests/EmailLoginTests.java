@@ -75,7 +75,7 @@ public class EmailLoginTests extends TestBase {
         });
         step("Нажать кнопку Подтвердить", () -> {
             loginPage.submitButtonClick();
-            Selenide.sleep(3000);
+            Selenide.sleep(3000);Selenide.sleep(3000);
         });
         step("Навести курсор на иконку Профиль и нажать на кнопку 'Выйти' в выпадающем меню", () -> {
             loginPage.logOutWithButton();
