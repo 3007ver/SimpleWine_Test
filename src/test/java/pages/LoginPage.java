@@ -54,7 +54,7 @@ public class LoginPage {
 
 
     public LoginPage goToUserProfile () {
-        userProfile.$(byText("Профиль")).click();
+        loginButton.click();
         return this;
     }
     public LoginPage openLkPage () {
@@ -71,7 +71,7 @@ public class LoginPage {
         return this;
     }
     public LoginPage logOutWithButton () {
-        userProfile.$(byText("Профиль")).hover();
+        loginButton.hover();
         profilePopup.shouldBe(Condition.visible);
         exitButton.click();
         return this;
