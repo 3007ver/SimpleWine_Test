@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Selenide;
 import config.CredentialsConfig;
 import org.aeonbits.owner.ConfigFactory;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.AddToCartPage;
 import pages.LoginPage;
@@ -36,6 +37,7 @@ public class AddProductToCartTest extends TestBase  {
 
     }
     @Test
+    @Tag("remote")
     void cartAfterLoginTest () {
         step("Открыть страницу продукта", () -> {
             addToCartPage.openPage();
