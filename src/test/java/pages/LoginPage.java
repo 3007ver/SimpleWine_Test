@@ -18,7 +18,7 @@ public class LoginPage {
     emailButton = $(".auth__block-info"),
     emailInput = $("[name=authEmail]"),
     passwordInput = $("[name=authPassword]"),
-    submitButton = $(".registration__form-button"),
+    submitButton = $("[data-autotest-target-id=auth-email-popup-form-byemail-submit]"),
     profilePopup = $("[data-autotest-target=user-profile-popup]"),
     userProfile = $(".user-burger__toggler"),
     userNameInProfile = $(".lk-banner__greeting"),
