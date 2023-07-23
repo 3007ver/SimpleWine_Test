@@ -43,7 +43,6 @@ public class EmailLoginTests extends TestBase {
         });
         step("Нажать кнопку Подтвердить", () -> {
             loginPage.submitButtonClick();
-            Selenide.sleep(3000);
         });
         step("Проверить, что произошел переход в личный кабинет  и отображается имя пользователя", () -> {
             loginPage.goToUserProfile()
@@ -75,7 +74,7 @@ public class EmailLoginTests extends TestBase {
         });
         step("Нажать кнопку Подтвердить", () -> {
             loginPage.submitButtonClick();
-            Selenide.sleep(3000);Selenide.sleep(3000);
+            Selenide.sleep(3000);
         });
         step("Навести курсор на иконку Профиль и нажать на кнопку 'Выйти' в выпадающем меню", () -> {
             loginPage.logOutWithButton();
@@ -110,7 +109,6 @@ public class EmailLoginTests extends TestBase {
         });
         step("Нажать кнопку Подтвердить", () -> {
             loginPage.submitButtonClick();
-            Selenide.sleep(3000);
         });
         step("Открыть главную страницу в новой вкладке", () -> {
             loginPage.openNewFrame();

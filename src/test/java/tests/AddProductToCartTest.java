@@ -37,7 +37,6 @@ public class AddProductToCartTest extends TestBase  {
 
     }
     @Test
-    @Tag("remote")
     void cartAfterLoginTest () {
         step("Открыть страницу продукта", () -> {
             addToCartPage.openPage();
