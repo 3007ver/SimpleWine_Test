@@ -42,8 +42,9 @@ public class EmailLoginTests extends TestBase {
             loginPage.passwordInput(passwordValue);
         });
         step("Нажать кнопку Подтвердить", () -> {
+            Selenide.sleep(5000);
             loginPage.submitButtonClick();
-            Selenide.refresh();
+            Selenide.sleep(5000);
         });
         step("Проверить, что произошел переход в личный кабинет  и отображается имя пользователя", () -> {
             loginPage.goToUserProfile()
