@@ -54,7 +54,7 @@ public class EmailLoginTests extends TestBase {
         });
     }
     @Test
-    //@Tag("remote")
+    @Tag("remote")
     void logOutTest () {
         step("Открыть главную страницу", () -> {
             mainPage.openPage()
@@ -89,7 +89,7 @@ public class EmailLoginTests extends TestBase {
     }
 
     @Test
-    //@Tag("remote")
+    @Tag("remote")
     void checkLogOutInOtherFrame () {
         step("Открыть главную страницу", () -> {
             mainPage.openPage()
