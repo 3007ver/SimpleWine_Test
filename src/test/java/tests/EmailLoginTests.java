@@ -43,6 +43,7 @@ public class EmailLoginTests extends TestBase {
         });
         step("Нажать кнопку Подтвердить", () -> {
             loginPage.submitButtonClick();
+            Selenide.sleep(5000);
 
         });
         step("Проверить, что произошел переход в личный кабинет  и отображается имя пользователя", () -> {
