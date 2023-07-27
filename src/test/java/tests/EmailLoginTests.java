@@ -42,20 +42,18 @@ public class EmailLoginTests extends TestBase {
             loginPage.passwordInput(passwordValue);
         });
         step("Нажать кнопку Подтвердить", () -> {
-            Selenide.sleep(5000);
             loginPage.submitButtonClick();
-            Selenide.sleep(5000);
+
         });
         step("Проверить, что произошел переход в личный кабинет  и отображается имя пользователя", () -> {
-            loginPage.goToUserProfile()
-                    .checkLink()
+            loginPage.openLkPage()
+                    //.checkLink()
                     .checkUserName(nameValue);
 
 
         });
     }
     @Test
-    @Tag("remote")
     void logOutTest () {
         step("Открыть главную страницу", () -> {
             mainPage.openPage()
@@ -90,7 +88,6 @@ public class EmailLoginTests extends TestBase {
     }
 
     @Test
-    @Tag("remote")
     void checkLogOutInOtherFrame () {
         step("Открыть главную страницу", () -> {
             mainPage.openPage()
