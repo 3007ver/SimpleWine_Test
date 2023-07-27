@@ -55,6 +55,7 @@ public class EmailLoginTests extends TestBase {
         });
     }
     @Test
+    @Tag("remote")
     void logOutTest () {
         step("Открыть главную страницу", () -> {
             mainPage.openPage()
@@ -76,6 +77,7 @@ public class EmailLoginTests extends TestBase {
         step("Нажать кнопку Подтвердить", () -> {
             loginPage.submitButtonClick();
             Selenide.sleep(10000);
+            loginPage.openLkPage();
         });
         step("Навести курсор на иконку Профиль и нажать на кнопку 'Выйти' в выпадающем меню", () -> {
             loginPage.logOutWithButton();
@@ -89,6 +91,7 @@ public class EmailLoginTests extends TestBase {
     }
 
     @Test
+    @Tag("remote")
     void checkLogOutInOtherFrame () {
         step("Открыть главную страницу", () -> {
             mainPage.openPage()
@@ -110,6 +113,7 @@ public class EmailLoginTests extends TestBase {
         step("Нажать кнопку Подтвердить", () -> {
             loginPage.submitButtonClick();
             Selenide.sleep(10000);
+            loginPage.openLkPage();
         });
         step("Открыть главную страницу в новой вкладке", () -> {
             loginPage.openNewFrame();

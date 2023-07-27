@@ -85,7 +85,7 @@ public class LoginPage {
 
     }
     public LoginPage openNewFrame () {
-        Selenide.executeJavaScript("window.open('"+URL_MAIN+"');");
+        Selenide.executeJavaScript("window.open('"+URL_LK+"');");
         return this;
     }
 
